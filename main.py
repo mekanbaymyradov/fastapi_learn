@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 
 from stream.router import router as stream_router
+from sse.router import router as sse_router
+
 
 app = FastAPI()
 
@@ -11,3 +13,4 @@ async def health_check():
 
 
 app.include_router(stream_router)
+app.include_router(sse_router)
